@@ -14,11 +14,13 @@ pygame.init()
 showScreen = pygame.display.set_mode((500,250))
 pygame.display.update()
 pygame.display.set_caption('Aziz Snake game')
-gamePlay = True
+gamePlay = False
 
-while gamePlay:
+while not gamePlay:
     for e in pygame.event.get():
-        print(e) #print actions 
+        print(e) #print actions
+        if e.type == pygame.QUIT:
+            gamePlay = True
         
 
 pygame.quit()
